@@ -60,7 +60,8 @@ _TD.a.push(function (TD) {
 				life: 50,
 				damage: 1, // 到达终点后会带来多少点伤害（1 ~ 10）
 				shield: 0,
-				money: 5 // 消灭本怪物后可得多少金钱（可选）
+				money: 5, // 消灭本怪物后可得多少金钱（可选）
+				frozen: 0
 			},
 			{
 				// idx: 1
@@ -70,7 +71,8 @@ _TD.a.push(function (TD) {
 				max_speed: 20,
 				life: 50,
 				damage: 2, // 到达终点后会带来多少点伤害（1 ~ 10）
-				shield: 1
+				shield: 1,
+				frozen: 0
 			},
 			{
 				// idx: 2
@@ -80,7 +82,8 @@ _TD.a.push(function (TD) {
 				max_speed: 30,
 				life: 50,
 				damage: 3, // 到达终点后会带来多少点伤害（1 ~ 10）
-				shield: 1
+				shield: 1,
+				frozen: 0
 			},
 			{
 				// idx: 3
@@ -90,7 +93,8 @@ _TD.a.push(function (TD) {
 				max_speed: 10,
 				life: 500,
 				damage: 3, // 到达终点后会带来多少点伤害（1 ~ 10）
-				shield: 1
+				shield: 1,
+				frozen: 0
 			},
 			{
 				// idx: 4
@@ -100,7 +104,8 @@ _TD.a.push(function (TD) {
 				max_speed: 10,
 				life: 50,
 				damage: 3, // 到达终点后会带来多少点伤害（1 ~ 10）
-				shield: 20
+				shield: 20,
+				frozen: 0
 			},
 			{
 				// idx: 5
@@ -110,7 +115,8 @@ _TD.a.push(function (TD) {
 				max_speed: 14,
 				life: 50,
 				damage: 10, // 到达终点后会带来多少点伤害（1 ~ 10）
-				shield: 2
+				shield: 2,
+				frozen: 0
 			},
 			{
 				// idx: 6
@@ -120,7 +126,8 @@ _TD.a.push(function (TD) {
 				max_speed: 30,
 				life: 100,
 				damage: 3, // 到达终点后会带来多少点伤害（1 ~ 10）
-				shield: 3
+				shield: 3,
+				frozen: 0
 			},
 			{
 				// idx: 7
@@ -130,7 +137,8 @@ _TD.a.push(function (TD) {
 				max_speed: 40,
 				life: 30,
 				damage: 4, // 到达终点后会带来多少点伤害（1 ~ 10）
-				shield: 1
+				shield: 1,
+				frozen: 0
 			},
 			{
 				// idx: 8
@@ -140,7 +148,8 @@ _TD.a.push(function (TD) {
 				max_speed: 10,
 				life: 300,
 				damage: 5, // 到达终点后会带来多少点伤害（1 ~ 10）
-				shield: 15
+				shield: 15,
+				frozen: 0
 			}
 		];
 

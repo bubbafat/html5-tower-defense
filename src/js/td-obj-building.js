@@ -184,7 +184,7 @@ _TD.a.push(function (TD) {
 		/**
 		 * 寻找一个目标（怪物）
 		 */
-		findTaget: function () {
+		findTarget: function () {
 			if (!this.is_weapon || this.is_pre_building || !this.grid) return;
 
 			var cx = this.cx, cy = this.cy,
@@ -224,6 +224,10 @@ _TD.a.push(function (TD) {
 			if (this.type == "laser_gun") {
 				// 如果是激光枪，目标立刻被击中
 				this.target.beHit(this, this.damage);
+				return;
+			}
+			
+			if (this.type == "quicksand") {
 				return;
 			}
 
@@ -328,7 +332,7 @@ _TD.a.push(function (TD) {
 					this.wait_blink = this._default_wait_blink;
 			}
 
-			this.findTaget();
+			this.findTarget();
 			this.tryToFire();
 		},
 

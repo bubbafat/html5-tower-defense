@@ -119,6 +119,9 @@ _TD.a.push(function (TD) {
 		arrive: function () {
 			this.grid = this.next_grid;
 			this.next_grid = null;
+			if(this.grid.building != null && this.grid.building.type == "quicksand") {
+				this.freeze(this.grid.building);
+			}
 			this.checkFinish();
 		},
 		findWay: function () {
@@ -237,6 +240,27 @@ _TD.a.push(function (TD) {
 
 		step: function () {
 			if (!this.is_valid || this.is_paused || !this.grid) return;
+			
+			var speed = this.speed * TD.global_speed;
+			
+			if(this.frozen > 0)
+			{
+				if(!this.was_frozen)
+				{
+					this.speed = this.speed / 3;
+					this.was_frozen = true;
+				}
+				
+				this.frozen--;
+			}
+			else
+			{
+				if(this.was_frozen)
+				{
+					this.speed = this.speed * 3;
+					this.was_frozen = false;
+				}
+			}
 
 			if (!this.next_grid) {
 				this.getNextGrid();
@@ -258,8 +282,7 @@ _TD.a.push(function (TD) {
 				var dpx = this.next_grid.cx - this.cx,
 					dpy = this.next_grid.cy - this.cy,
 					sx = dpx < 0 ? -1 : 1,
-					sy = dpy < 0 ? -1 : 1,
-					speed = this.speed * TD.global_speed;
+					sy = dpy < 0 ? -1 : 1;
 
 				if (Math.abs(dpx) < speed && Math.abs(dpy) < speed) {
 					this.cx = this.next_grid.cx;
@@ -295,6 +318,10 @@ _TD.a.push(function (TD) {
 //			if (this.scene.panel.balloontip.el == this) {
 //				this.scene.panel.balloontip.hide();
 //			}
+		},
+		
+		freeze: function(building) {
+			this.frozen = building.damage;
 		}
 	};
 

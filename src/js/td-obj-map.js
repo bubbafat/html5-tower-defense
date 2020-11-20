@@ -231,7 +231,10 @@ _TD.a.push(function (TD) {
 		 */
 		checkPassable: function (mx, my) {
 			var grid = this.getGrid(mx, my);
-			return (grid != null && grid.passable_flag == 1 && grid.build_flag != 2);
+			return (grid != null 
+				&& grid.passable_flag == 1 
+				&& grid.build_flag != 2
+			    || (grid.building != null && grid.building.type == "quicksand"));
 		},
 
 		step: function () {

@@ -24,6 +24,7 @@ var _TD = {
 			exp_fps_half: 12,
 			exp_fps_quarter: 6,
 			exp_fps_eighth: 4,
+			quicksands: 0,
 			stage_data: {},
 			defaultSettings: function () {
 				return {

@@ -90,6 +90,19 @@ _TD.a.push(function (TD) {
 				life: 100,
 				shield: 100,
 				cost: 2000
+			},
+			
+			"quicksand": {
+				damage: 200,
+				range: 1,
+				max_range: 1,
+				speed: 1,
+				life: 100,
+				shield: 100,
+				cost: 5000,
+				_upgrade_rule_damage: function(old_level, old_value) {
+					return old_value * 1.25;
+				}
 			}
 		};
 

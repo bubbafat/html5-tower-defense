@@ -123,8 +123,11 @@ _TD.a.push(function (TD) {
 		removeBuilding: function () {
 			if (this.build_flag == 2)
 				this.build_flag = 1;
-			if (this.building)
+			if (this.building) {
+				if (this.building.type == "quicksand") 
+					TD.quicksands--;
 				this.building.remove();
+			}
 			this.building = null;
 		},
 
@@ -249,11 +252,18 @@ _TD.a.push(function (TD) {
 
 			if (TD.mode == "build" && this.map.is_main_map && !this.building) {
 				// 如果处于建设模式下，并且点击在主地图的空格子上，则尝试建设指定建筑
-				if (this.checkBlock()) {
+				if (this.map.pre_building.type != "quicksand" && this.checkBlock()) {
 					// 起点与终点之间被阻塞，不能修建
 					this.scene.panel.balloontip.msg(this._block_msg, this);
 				} else {
-					// 购买建筑
+					if (this.map.pre_building.type == "quicksand") {
+						if (TD.quicksands >= 3) {
+							this.scene.panel.balloontip.msg("Can only have 3 Quicksands", this);
+							return;
+						} else {
+							TD.quicksands++;
+						}
+					}
 					this.buyBuilding(this.map.pre_building.type);
 				}
 			} else if (!this.building && this.map.selected_building) {
