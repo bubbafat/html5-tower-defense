@@ -169,7 +169,7 @@ _TD.a.push(function (TD) {
 					max_wave: -1,
 					wave_damage: 0, // 当前一波怪物造成了多少点生命值的伤害
 					max_monsters_per_wave: 100, // 每一波最多多少怪物
-					money: 500000,
+					money: 500,
 					quicksands: 0,
 					score: 0, // 开局时的积分
 					life: 100,
