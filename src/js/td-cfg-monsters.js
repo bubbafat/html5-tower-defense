@@ -36,7 +36,11 @@ _TD.a.push(function (TD) {
 			ctx.beginPath();
 			ctx.fillRect(this.cx - s, this.cy - this.r - 6, s * 2, 4 * _TD.retina);
 			ctx.closePath();
-			ctx.fillStyle = "#f00";
+			if(this.frozen > 0) {
+				ctx.fillStyle = "#17c0c5";
+			} else {
+				ctx.fillStyle = "#f00";
+			}
 			ctx.beginPath();
 			ctx.fillRect(this.cx - s + _TD.retina, this.cy - this.r - (6 - _TD.retina), this.life * l / this.life0, 2 * _TD.retina);
 			ctx.closePath();

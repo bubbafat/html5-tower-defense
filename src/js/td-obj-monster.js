@@ -58,6 +58,7 @@ _TD.a.push(function (TD) {
 			this.toward = 2; // 默认面朝下方
 			this._dx = 0;
 			this._dy = 0;
+			this.frozen = 0;
 
 			this.is_blocked = false; // 前进的道路是否被阻塞了
 		},
@@ -321,7 +322,7 @@ _TD.a.push(function (TD) {
 		},
 		
 		freeze: function(building) {
-			this.frozen = building.damage;
+			this.frozen += building.damage;
 		}
 	};
 

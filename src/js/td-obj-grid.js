@@ -258,7 +258,7 @@ _TD.a.push(function (TD) {
 				} else {
 					if (this.map.pre_building.type == "quicksand") {
 						if (TD.quicksands >= 3) {
-							this.scene.panel.balloontip.msg("Can only have 3 Quicksands", this);
+							this.scene.panel.balloontip.msg(TD._t("building_limit_quicksand", [3]), this);
 							return;
 						} else {
 							TD.quicksands++;

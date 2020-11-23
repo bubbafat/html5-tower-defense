@@ -37,6 +37,7 @@ _TD.a.push(function (TD) {
 		"building_intro_HMG": "Heavy Machine Gun: fast shoot, greater damage, normal range ($${0})",
 		"building_intro_laser_gun": "Laser gun: greater damage, 100% hit ($${0})",
 		"building_intro_quicksand": "Quicksand: decreases monster speed for a period of time ($${0})",
+		"building_limit_quicksand": "Can only have ${0} Quicksands",
 		"click_to_build": "Left click to build ${0} ($${1})",
 		"upgrade": "Upgrade ${0} to level ${1} , cost $${2}。",
 		"sell": "Sell ${0} for $${1}",

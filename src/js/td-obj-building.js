@@ -228,6 +228,7 @@ _TD.a.push(function (TD) {
 			}
 			
 			if (this.type == "quicksand") {
+				// we don't deal damage for quicksand
 				return;
 			}
 
