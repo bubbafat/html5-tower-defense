@@ -126,6 +126,19 @@ _TD.a.push(function (TD) {
 					this.scene.map.selected_building.tryToSell(this);
 				}
 			});
+			
+			this.btn_hints = new TD.Button("panel_btn_hints", {
+				scene: this.scene,
+				x: this.x,
+				y: this.y + 380 * _TD.retina,
+				is_visible: true,
+				text: TD._t("toggle_hints"),
+				step_level: this.step_level,
+				render_level: this.render_level + 1,
+				onClick: function () {
+					TD.show_hints = !TD.show_hints;
+				}
+			})
 		},
 		step: function () {
 			if (TD.life_recover) {

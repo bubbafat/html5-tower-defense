@@ -246,6 +246,17 @@ _TD.a.push(function (TD) {
 		(renderFunctions[building.type] || renderFunctions["wall"])(
 			building, ctx, map, gs, gs2
 		);
+		
+		if(TD.show_hints) {
+			ctx.font = "bold 14px Arial";
+			ctx.textAlign = "center";
+
+			ctx.strokeStyle = "black";
+			ctx.lineWidth = 2;
+			ctx.strokeText(building.level, building.cx, building.cy - 7);
+			ctx.fillStyle = "yellow";
+			ctx.fillText(building.level, building.cx, building.cy - 7);
+		}
 	}
 
 }); // _TD.a.push end
