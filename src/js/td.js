@@ -50,10 +50,30 @@ var _TD = {
 				this.iframe = 0; // 当前播放到第几帧了
 				this.last_iframe_time = (new Date()).getTime();
 				this.fps = 0;
+				document.addEventListener("keydown", this.keyDown);
 
 				this.start();
 			},
+			
+			keyDown: function(e) {
+				if(TD.is_debug) {
+					// m (money)
+					if(e.keyCode == 77) {
+						_TD.cheat = "money+";
+					}
+					
+					// l (life)
+					if(e.keyCode == 76) {
+						_TD.cheat = "life+";
+					}
 
+					// d (difficulty)
+					if(e.keyCode == 68) {
+						_TD.cheat = "difficulty-";
+					}
+				}
+			},
+			
 			/**
 			 * 开始游戏，或重新开始游戏
 			 */
@@ -64,7 +84,7 @@ var _TD = {
 				this._exp_fps_0 = this.exp_fps - 0.4; // 下限
 				this._exp_fps_1 = this.exp_fps + 0.4; // 上限
 
-				this.mode = "normal"; // mode 分为 normail（普通模式）及 build（建造模式）两种
+				this.mode = "normal"; // mode 分为 normal（普通模式）及 build（建造模式）两种
 				this.eventManager.clear(); // 清除事件管理器中监听的事件
 				this.lang.mix(this, this.defaultSettings());
 				this.stage = new TD.Stage("stage-main", TD.getDefaultStageData("stage_main"));

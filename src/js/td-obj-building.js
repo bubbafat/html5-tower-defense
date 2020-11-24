@@ -195,12 +195,32 @@ _TD.a.push(function (TD) {
 				Math.pow(this.target.cx - cx, 2) + Math.pow(this.target.cy - cy, 2) <= range2)
 				return;
 
-			// 在进入射程的怪物中寻找新的目标
-			this.target = TD.lang.any(
-				TD.lang.rndSort(this.map.monsters), // 将怪物随机排序
-				function (obj) {
+			// in case the target is not null but also not valid
+			this.target = null;
+
+			// only find targets if there are potential targets
+			if(this.map.monsters.length > 0) {
+				// lasers shoot the weakest monster, everything else is random
+				var sorter = (this.type == "laser_gun") ? this.lifeSort : TD.lang.rndSort;
+				
+				// find those in range
+				var inRange = this.map.monsters.filter(function (obj) {
 					return Math.pow(obj.cx - cx, 2) + Math.pow(obj.cy - cy, 2) <= range2;
 				});
+				
+				// sort the and pick the first item
+				if(inRange.length > 0) {
+					var sorted = sorter(inRange);
+					this.target = sorted[0];
+				}
+			}
+		},
+
+		lifeSort: function (monsters) {
+			var a = monsters.concat();
+			return a.sort(function (m1, m2) {
+				return m1.life - m2.life;
+			});
 		},
 
 		/**
