@@ -1,12 +1,10 @@
-# HTML5 塔防游戏
-
+# HTML5 Tower Defense Game
 
  * Author: [oldj](http://oldj.net/), [bubbafat](https://roberthorvick.com)
  * Email: oldj.wu@gmail.com, robert.horvick@gmail.com
  * Source (Current): https://github.com/bubbafat/html5-tower-defense
  * Source (Original): https://github.com/oldj/html5-tower-defense
  * License: MIT
-
 
 ## Run
 
