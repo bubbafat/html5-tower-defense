@@ -201,7 +201,9 @@ _TD.a.push(function (TD) {
 			// only find targets if there are potential targets
 			if(this.map.monsters.length > 0) {
 				// lasers shoot the weakest monster, everything else is random
-				var sorter = (this.type == "laser_gun") ? this.lifeSort : TD.lang.rndSort;
+				// var sorter = (this.type == "laser_gun") ? this.lifeSort : TD.lang.rndSort;
+				var sorter = TD.lang.rndSort;
+				
 				
 				// find those in range
 				var inRange = this.map.monsters.filter(function (obj) {
