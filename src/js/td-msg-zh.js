@@ -38,6 +38,7 @@ _TD.a.push(function (TD) {
 		"building_intro_laser_gun": "激光枪 伤害较大，命中率 100% ($${0})",
 		"building_intro_quicksand": "Quicksand: decreases monster speed for a period of time ($${0})",
 		"building_limit_quicksand": "Can only have ${0} Quicksands",
+		"building_intro_missile": "Missile Launcher: longer range, damages nearby monsters ($${0})",
 		"toggle_hints": "Hints",
 		"click_to_build": "左键点击建造 ${0} ($${1})",
 		"upgrade": "升级 ${0} 到 ${1} 级，需花费 $${2}。",

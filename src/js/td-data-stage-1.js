@@ -155,6 +155,10 @@ _TD.a.push(function (TD) {
 								building: "quicksand"
 							},
 							{
+								pos: [2, 1],
+								building: "missile"
+							},
+							{
 								pos: [2, 2],
 								building: "wall"
 							}

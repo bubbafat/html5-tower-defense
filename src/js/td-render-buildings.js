@@ -234,6 +234,17 @@ _TD.a.push(function (TD) {
 			ctx.closePath();
 			ctx.fill();
 			ctx.stroke();
+		},
+		"missile": function (b, ctx, map, gs, gs2) {
+			ctx.fillStyle = "#FFBB00";
+			ctx.strokeStyle = "#FFBB00";
+
+			ctx.beginPath();
+			ctx.lineWidth = _TD.retina;
+			ctx.arc(b.cx, b.cy, gs2-2, 0, Math.PI * 2, true);
+			ctx.closePath();
+			ctx.fill();
+			ctx.stroke();
 		}
 	};
 
@@ -249,7 +260,7 @@ _TD.a.push(function (TD) {
 
 		if (TD.show_hints && building.level > 0) {
 			if (building.type != "wall") {
-				ctx.font = "bold 14px Arial";
+				ctx.font = "bold 24px Arial";
 				ctx.textAlign = "center";
 
 				ctx.strokeStyle = "black";

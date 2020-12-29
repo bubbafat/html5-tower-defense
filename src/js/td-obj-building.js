@@ -514,11 +514,18 @@ _TD.a.push(function (TD) {
 			var cx = this.cx,
 				cy = this.cy,
 				r = this.r * _TD.retina,
-				monster = this.map.anyMonster(function (obj) {
+				monsters = this.map.allMonsters(function (obj) {
 					return Math.pow(obj.cx - cx, 2) + Math.pow(obj.cy - cy, 2) <= Math.pow(obj.r + r, 2) * 2;
 				});
-
-			if (monster) {
+			
+			if(this.building.type != "missile" && monsters.length > 1) {
+				// just take the first one if no AoE
+				monsters = [monsters[0]];
+			}
+			
+			var hit = false;
+			monsters.forEach(monster => {
+				hit = true;
 				// 击中的怪物
 				monster.beHit(this.building, this.damage);
 				this.is_valid = false;
@@ -534,10 +541,9 @@ _TD.a.push(function (TD) {
 					scene: this.map.scene,
 					time: 0.2
 				});
+			});
 
-				return true;
-			}
-			return false;
+			return hit;
 		},
 
 		step: function () {

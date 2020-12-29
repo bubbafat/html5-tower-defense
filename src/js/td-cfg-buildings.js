@@ -103,6 +103,20 @@ _TD.a.push(function (TD) {
 				_upgrade_rule_damage: function(old_level, old_value) {
 					return old_value * 1.25;
 				}
+			},
+			
+			"missile": {
+				damage: 50,
+				range: 4,
+				max_range: 10,
+				speed: 1,
+				bullet_speed: 3,
+				life: 100,
+				shield: 100,
+				cost: 10000,
+				_upgrade_rule_damage: function(old_level, old_value) {
+					return old_value * 1.3;
+				}
 			}
 		};
 

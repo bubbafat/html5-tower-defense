@@ -43,6 +43,7 @@ Note that the above cheating methods are mainly designed for testing, please use
 
 ## Update history
 
+ - 2020-12-29 (bubbafat) Add missile (area damage) and reverting lasers back to normal (random) targetting
  - 2020-11-20 (bubbafat) Add quicksand (slows monsters), some cleanup, and changed targeting so lasers target weakest-first
  - 2015-09-06 Support retina display.
  - 2011-01-01 Adjusted the parameters, and based on the suggestions of netizens, added checks when building new buildings, and it is forbidden to surround monsters with buildings (v0.1.14).

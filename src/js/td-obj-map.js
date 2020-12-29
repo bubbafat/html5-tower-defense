@@ -108,6 +108,9 @@ _TD.a.push(function (TD) {
 			return this.grids[p];
 		},
 
+		allMonsters: function(f) {
+			return TD.lang.all(this.monsters, f);
+		},
 		anyMonster: function (f) {
 			return TD.lang.any(this.monsters, f);
 		},

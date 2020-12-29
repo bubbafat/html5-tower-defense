@@ -109,6 +109,15 @@ _TD.a.push(function (TD) {
 			return null;
 		},
 
+		all: function (list, f) {
+			var result = [];
+			for (var i = 0, l = list.length; i < l; i++) {
+				if (f(list[i]))
+					result.push(list[i]);
+			}
+			return result;
+		},
+
 		/**
 		 * 依次弹出列表中的元素，并对其进行操作
 		 * 注意，执行完毕之后原数组将被清空

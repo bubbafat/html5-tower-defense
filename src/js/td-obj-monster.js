@@ -84,10 +84,11 @@ _TD.a.push(function (TD) {
 
 			this.life -= damage;
 			TD.score += Math.floor(Math.sqrt(damage));
+			
 			if (this.life <= 0) {
 				this.beKilled(building);
 			}
-
+			
 			var balloontip = this.scene.panel.balloontip;
 			if (balloontip.el == this) {
 				balloontip.text = TD._t("monster_info", [this.life, this.shield, this.speed, this.damage]);
