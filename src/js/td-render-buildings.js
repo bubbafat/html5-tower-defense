@@ -258,11 +258,11 @@ _TD.a.push(function (TD) {
 			building, ctx, map, gs, gs2
 		);
 
+		
 		if (TD.show_hints && building.level > 0) {
 			if (building.type != "wall") {
-				ctx.font = "bold 24px Arial";
+				ctx.font = "bold " + (12 * _TD.retina) + "px 'Arial'";
 				ctx.textAlign = "center";
-
 				ctx.strokeStyle = "black";
 				ctx.lineWidth = 2;
 				ctx.strokeText(building.level, building.cx, building.cy - 7);
