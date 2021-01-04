@@ -330,8 +330,10 @@ _TD.a.push(function (TD) {
 				]);
 			}
 
-			this.updateBtnDesc();
-			this.scene.panel.balloontip.msg(msg, btn);
+			if(btn) {
+				this.updateBtnDesc();
+				this.scene.panel.balloontip.msg(msg, btn);
+			}
 		},
 
 		tryToSell: function () {
@@ -519,13 +521,22 @@ _TD.a.push(function (TD) {
 				monsters = this.map.allMonsters(function (obj) {
 					return Math.pow(obj.cx - cx, 2) + Math.pow(obj.cy - cy, 2) <= Math.pow(obj.r + r, 2) * 2;
 				});
-			
-			if(this.building.type != "missile" && monsters.length > 1) {
-				// just take the first one if no AoE
-				monsters = [monsters[0]];
+
+			// missiles use the same logic to detect a hit (above), but apply the damage over a larger area
+			// so when we've detected a missile hit, calculate the damage by looking for all monsters in 
+			// the expanded radius
+			if(this.building.type == "missile" && monsters.length > 0) {
+				monsters = this.map.allMonsters(function (obj) {
+					return Math.pow(obj.cx - cx, 2) + Math.pow(obj.cy - cy, 2) <= Math.pow(obj.r + r, 2) * 5;
+				});
+			} else {
+				// non-missiles apply their damage to a single monster
+				if(monsters.length > 1) {
+					monsters = [monsters[0]];
+				}
 			}
 			
-			var hit = false;
+			let hit = false;
 			monsters.forEach(monster => {
 				hit = true;
 				// 击中的怪物

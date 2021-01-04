@@ -13,7 +13,7 @@ var _TD = {
 		delete this.init; // 一旦初始化运行，即删除这个入口引用，防止初始化方法被再次调用
 
 		var i, TD = {
-			version: "0.1.17", // 版本命名规范参考：http://semver.org/
+			version: "0.1.19", // 版本命名规范参考：http://semver.org/
 			is_debug: !!is_debug,
 			is_paused: true,
 			width: 16, // 横向多少个格子
@@ -71,6 +71,52 @@ var _TD = {
 					if(e.keyCode == 68) {
 						_TD.cheat = "difficulty-";
 					}
+					
+					// u (upgrade)
+					if(e.keyCode == 85) {
+						TD.stage.map.selected_building.tryToUpgrade();
+					}
+
+					// s (upgrade)
+					if(e.keyCode == 83) {
+						TD.stage.map.selected_building.tryToSell();
+					}
+
+					// 1 (cannon build)
+					if(e.keyCode == 49) {
+						TD.stage.map.preBuild("cannon");
+					}
+
+					// 2 (LMG)
+					if(e.keyCode == 50) {
+						TD.stage.map.preBuild("LMG");
+					}
+
+					// 3 (HMG)
+					if(e.keyCode == 51) {
+						TD.stage.map.preBuild("HMG");
+					}
+
+					// 4 (laser_gun)
+					if(e.keyCode == 52) {
+						TD.stage.map.preBuild("laser_gun");
+					}
+
+					// 5 (quicksand)
+					if(e.keyCode == 53) {
+						TD.stage.map.preBuild("quicksand");
+					}
+
+					// 6 (missile)
+					if(e.keyCode == 54) {
+						TD.stage.map.preBuild("missile");
+					}
+
+					// 9 (wall)
+					if(e.keyCode == 57) {
+						TD.stage.map.preBuild("wall");
+					}
+
 				}
 			},
 			

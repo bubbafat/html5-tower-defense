@@ -29,6 +29,7 @@ _TD.a.push(function (TD) {
 		var building_attributes = {
 			// 路障
 			"wall": {
+				typeid: 1,
 				damage: 0,
 				range: 0,
 				speed: 0,
@@ -40,6 +41,7 @@ _TD.a.push(function (TD) {
 
 			// 炮台
 			"cannon": {
+				typeid: 2,
 				damage: 12,
 				range: 4,
 				max_range: 8,
@@ -55,6 +57,7 @@ _TD.a.push(function (TD) {
 
 			// 轻机枪
 			"LMG": {
+				typeid: 3,
 				damage: 5,
 				range: 5,
 				max_range: 10,
@@ -67,6 +70,7 @@ _TD.a.push(function (TD) {
 
 			// 重机枪
 			"HMG": {
+				typeid: 4,
 				damage: 30,
 				range: 3,
 				max_range: 5,
@@ -82,6 +86,7 @@ _TD.a.push(function (TD) {
 
 			// 激光枪
 			"laser_gun": {
+				typeid: 5,
 				damage: 25,
 				range: 6,
 				max_range: 10,
@@ -93,6 +98,7 @@ _TD.a.push(function (TD) {
 			},
 			
 			"quicksand": {
+				typeid: 6,
 				damage: 200,
 				range: 1,
 				max_range: 1,
@@ -106,6 +112,7 @@ _TD.a.push(function (TD) {
 			},
 			
 			"missile": {
+				typeid: 7,
 				damage: 50,
 				range: 4,
 				max_range: 10,

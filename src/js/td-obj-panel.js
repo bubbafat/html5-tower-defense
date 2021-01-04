@@ -138,8 +138,24 @@ _TD.a.push(function (TD) {
 				onClick: function () {
 					TD.show_hints = !TD.show_hints;
 				}
-			})
+			});
+
+			if(TD.export_enabled) {
+				this.btn_hints = new TD.Button("panel_btn_export", {
+					scene: this.scene,
+					x: this.x,
+					y: this.y + 420 * _TD.retina,
+					is_visible: true,
+					text: TD._t("button_export_text"),
+					step_level: this.step_level,
+					render_level: this.render_level + 1,
+					onClick: function () {
+						prompt("map URL", TD.getMapUrl());
+					}
+				});
+			}
 		},
+		
 		step: function () {
 			if (TD.life_recover) {
 				this._life_recover = this._life_recover2 = TD.life_recover;
@@ -220,6 +236,35 @@ _TD.a.push(function (TD) {
 		return panel;
 	};
 
+	TD.getParameterByName = function(name, defaultValue, url = window.location.href) {
+		name = name.replace(/[\[\]]/g, '\\$&');
+		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+			results = regex.exec(url);
+		if (!results) return defaultValue;
+		if (!results[2]) return defaultValue;
+		return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	}
+
+	TD.getMapUrl = function() {
+		//params.push("score=" + TD.getParameterByName("score", 500));
+
+		params = {
+			"life": TD.life,
+			"money": TD.money,
+			"difficulty": TD.difficulty,
+			"wave_damage": TD.wave_damage,
+			"board": TD.getBoardString()
+		};
+
+		return Object.keys(params)
+			.map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+			.join('&');
+	};
+	
+	TD.getBoardString = function() {
+		return this;
+	}
+	
 	// balloon tip对象的属性、方法。注意属性中不要有数组、对象等
 	// 引用属性，否则多个实例的相关属性会发生冲突
 	var balloontip_obj = {

@@ -52,6 +52,7 @@ _TD.a.push(function (TD) {
 		"button_restart_text": "Restart",
 		"button_pause_text": "Pause",
 		"button_continue_text": "Continue",
+		"button_export_text": "Export",
 		"button_pause_desc_0": "Pause the game",
 		"button_pause_desc_1": "Resume the game",
 		"blocked": "Can't build here, it will block the way from entrance to exit!",
