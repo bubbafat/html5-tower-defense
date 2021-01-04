@@ -43,6 +43,7 @@ Note that the above cheating methods are mainly designed for testing, please use
 
 ## Update history
 
+ - 2021-01-04 (bubbafat) Added keyboard shortcuts (*u*pgrade, *s*ell, 1-9 map to the building build mode), updated missile radius (was not useful before)
  - 2020-12-29 (bubbafat) Add missile (area damage) and reverting lasers back to normal (random) targetting
  - 2020-11-20 (bubbafat) Add quicksand (slows monsters), some cleanup, and changed targeting so lasers target weakest-first
  - 2015-09-06 Support retina display.
